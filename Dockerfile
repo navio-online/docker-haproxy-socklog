@@ -11,4 +11,4 @@ RUN set -ex; \
 ADD files/ /
 
 EXPOSE 5432
-CMD ["/opt/run.sh"]
+CMD ["sh", /opt/run.sh"]
