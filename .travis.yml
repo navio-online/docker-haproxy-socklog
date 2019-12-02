@@ -1,0 +1,15 @@
+services:
+- docker
+language: python
+python: 3.6
+cache:
+  directories:
+  - "$HOME/.cache/pip"
+before_cache:
+- rm -f $HOME/.cache/pip/log/debug.log
+install:
+- pip install --upgrade pip
+- pip install -r requirements-build.txt
+- nb setup
+script:
+- nb push
